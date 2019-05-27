@@ -18,6 +18,13 @@ namespace InternetConnectionCounter
                     counter++;
                     Console.WriteLine($"{counter} - {DateTime.Now.ToString()}");
                     Thread.Sleep(120000); //A timer for before my connection get fully connected again
+
+                    if (NetworkInterface.GetIsNetworkAvailable())
+                    {
+                        Console.WriteLine($"Connection is back {DateTime.Now.ToString()}");
+                    }
+
+                   
                 }
             }
         }
